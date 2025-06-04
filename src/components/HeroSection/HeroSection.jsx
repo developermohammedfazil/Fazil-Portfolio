@@ -2,69 +2,99 @@
 import { useEffect } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { BsLinkedin, BsGithub, BsEnvelope } from 'react-icons/bs';
+import { useNavigate } from 'react-router-dom';
 import styles from './HeroSection.module.css';
-
+import Fazil from '../../assets/FazilSweetboy.png';
 
 const HeroSection = () => {
-  // Lazy load background image for better performance
+  const navigate = useNavigate();
+
+  // Preload image for performance
   useEffect(() => {
     const img = new Image();
-    img.src = '/assets/images/hero-bg.webp';
+    img.src = Fazil;
   }, []);
 
   return (
-    <section className={styles.heroSection}>
+    <section className={`${styles.heroSection} pt-5`}>
+      {/* 
+         pt-5 adds some top padding so the content appears below the navbar.
+         The overlay can be used for styling (e.g., a semi-transparent background).
+      */}
       <div className={styles.overlay}></div>
       
-      <Container className={styles.contentContainer}>
+      <Container className={`${styles.contentContainer} pt-5 mt-4`}>
         <Row className="g-5 align-items-center">
-          {/* Main Content - Left Column (Desktop) / Top (Mobile) */}
-          <Col lg={7} className="text-center text-lg-start">
-            <h1 className={styles.mainHeading}>
-              Bringing Visions to Life<br />
-              <span className={styles.highlight}>with Innovative Solutions</span>
-            </h1>
-            <p className={styles.subText}>
-              Explore my work, connect with me, and discover my journey as a front-end developer!
-            </p>
-            <Button 
-              variant="outline-light" 
-              size="lg"
-              className={styles.ctaButton}
-              href="#projects"
-            >
-              View Work
-            </Button>
-          </Col>
-
-          {/* Contact Info - Right Column (Desktop) / Bottom (Mobile) */}
-          <Col lg={5} className="mt-5 mt-lg-0">
-            <div className={`${styles.contactWrapper} p-4 rounded-3`}>
-              <h2 className={`${styles.contactHeading} mb-4`}>Contact</h2>
+          {/* Left Column - Content (Approximately 65% width on large screens) */}
+          <Col xs={12} lg={7} className="text-center text-lg-start mb-5 mb-lg-0">
+            <div className={styles.contentWrapper}>
+              <h1 className={styles.mainHeading}>
+                Bringing Visions to Life<br />
+                <span className={styles.highlight}>with Innovative Solutions</span>
+              </h1>
+              <p className={styles.subText}>
+                Explore my work, connect with me, and discover my journey as a front-end developer!
+              </p>
               
-              <div className="d-flex flex-column gap-3">
-                <div className={`${styles.contactItem} d-flex align-items-center gap-3`}>
-                  <BsLinkedin className={styles.icon} />
-                  <a href="https://linkedin.com" target="_blank" rel="noopener" className={styles.contactLink}>
-                    linkedin.com/in/yourprofile
-                  </a>
-                </div>
+              {/* Buttons and Icons */}
+              <div className="d-flex flex-column align-items-center align-items-lg-start">
+                {/* "View Work" Button */}
+                <Button 
+                  variant="outline-light" 
+                  size="lg"
+                  className={`${styles.ctaButton} mb-4`}
+                  href="#projects"
+                >
+                  View Work
+                </Button>
 
-                <div className={`${styles.contactItem} d-flex align-items-center gap-3`}>
-                  <BsGithub className={styles.icon} />
-                  <a href="https://github.com" target="_blank" rel="noopener" className={styles.contactLink}>
-                    github.com/yourusername
-                  </a>
-                </div>
+                {/* "Contact" Button */}
+                <Button 
+                variant="primary" 
+                className={`${styles.contactButton} mb-4`} // Use module styles
+                onClick={() => navigate('/contact')}
+              >
+                Contact
+              </Button>
 
-                <div className={`${styles.contactItem} d-flex align-items-center gap-3`}>
-                  <BsEnvelope className={styles.icon} />
-                  <a href="mailto:your@email.com" className={styles.contactLink}>
-                    your.email@example.com
+                  
+                {/* Social Icons */}
+                <div className="d-flex gap-4">
+                  <a 
+                    href="http://linkedin.com/in/mohammedfazil-s" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={styles.contactLink}
+                  >
+                    <BsLinkedin className={styles.icon} />
+                  </a>
+                  <a 
+                    href="https://github.com/developermohammedfazil" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={styles.contactLink}
+                  >
+                    <BsGithub className={styles.icon} />
+                  </a>
+                  <a 
+                    href="mailto:mohammedfazil8883@gmail.com" 
+                    className={styles.contactLink}
+                  >
+                    <BsEnvelope className={styles.icon} />
                   </a>
                 </div>
               </div>
             </div>
+          </Col>
+          
+          {/* Right Column - Image (Approximately 35% width on large screens) */}
+          <Col xs={12} lg={5} className="text-center">
+            <img 
+              src={Fazil}
+              alt="Profile"
+              className="img-fluid"
+              style={{ borderRadius: '10px' }} // Adjust border radius as needed
+            />
           </Col>
         </Row>
       </Container>

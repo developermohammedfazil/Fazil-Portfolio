@@ -1,4 +1,47 @@
 /* Remove border and shadow from the menu icon */
+/* Navbar Background & Text Colors */
+
+* Add to your main CSS file */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: #2c3e50;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+.custom-navbar {
+  background-color:#3c3a3a !important; /* Deep black */
+}
+
+.brand-link {
+  color: #00BFFF !important; /* Sky blue logo text */
+}
+
+.nav-link-item {
+  color: #efe7e7 !important; /* Light gray text */
+  margin-left: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link-item:hover {
+  color: #00FFAB !important; /* Mint green on hover */
+}
+
+/* Optional: Toggle button color on dark background */
+.navbar-toggler {
+  border-color: #e9e5e5;
+  background-color: transparent;
+}
+
+
 .navbar-toggler {
     border: none !important;
     box-shadow: none !important;
@@ -14,21 +57,43 @@
     text-align: right;
   }
   
-  /* Add underline effect on hover */
   .nav-links .nav-link {
+    display: inline-block;          
     position: relative;
-    font-weight: 500;
-    color: #333;
-    padding: 10px 15px;
+    text-decoration: none !important;
+    color: #f3eded !important;      
+    padding: 0.5rem;               
   }
-  
-  .nav-links .nav-link:hover::after {
+  .nav-links .nav-link::after {
     content: "";
     position: absolute;
-    left: 0;
-    bottom: 2px;
-    width: 100%;
-    height: 2px;
-    background-color: #007bff;
+    right: 0;
+    bottom: 0;                      /* Positions the line at the bottom of the link */
+    width:0;
+    height: 2px;                    /* The thickness of the underline */
+    background-color: #007bff;      /* Your desired underline color (Bootstrap primary) */
+    transition: width 0.3s ease-in-out;
   }
   
+  .nav-links .nav-link:hover::after,
+  .nav-links .nav-link:focus::after {
+    width: 100%;
+  }
+  .nav-links {
+    white-space: nowrap;
+    overflow-x: auto;      
+  }
+  /* Remove the full-width line on mobile */
+@media (max-width: 767px) {
+  .nav-links .nav-link::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;   
+    width:0;
+    height: 2px;                
+    background-color: #007bff;     
+    transition:width 0.3s ease-in-out;          
+  }
+
+}

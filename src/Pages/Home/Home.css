@@ -1,0 +1,106 @@
+/* HOME SECTION BACKGROUND + SPACING */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.home-about-section {
+    /* Dark background, plus optional starry image */
+    background: #fff url("/path-to-your-star-bg.jpg") no-repeat center center;
+    background-size: cover;
+    padding: 60px 0;  /* Top and bottom spacing */
+    color: #000000;      /* Default text color in this section */
+  }
+  
+  /* HEADING STYLES */
+  .home-about-description h1 {
+    font-size: 2.8em;
+    font-weight: 700;
+    color:rgb(52, 52, 52);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  /* HIGHLIGHT TEXT CLASS */
+
+  .purple {
+    background: linear-gradient(90deg, #1708e8, hsl(271, 93%, 12%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+  }
+  /* MAIN BODY TEXT */
+  .home-about-body {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #0f0e0e;
+  }
+  
+  /* AVATAR/IMAGE COLUMN */
+  .myAvtar {
+    text-align: center; /* Ensures the image is centered on small screens */
+  }
+  
+  .myAvtar img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* SOCIAL SECTION */
+  .home-about-social {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .home-about-social h1 {
+    font-size: 2.2em;
+    color: #1b1818;
+    margin-bottom: 10px;
+  }
+  
+  .home-about-social p {
+    color: #0f0e0e;
+    margin-bottom: 20px;
+  }
+  
+  /* SOCIAL ICONS LIST */
+  .home-about-social-links {
+    color: #0f0e0e;
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center icons in a row */
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    
+  }
+  
+  /* INDIVIDUAL ICONS */
+  .social-icons a {
+    color: #000000;
+    font-size: 2rem;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .social-icons a:hover {
+    transform: scale(1.2);
+    color: #6c0dc4;
+  }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .home-about-description h1 {
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  

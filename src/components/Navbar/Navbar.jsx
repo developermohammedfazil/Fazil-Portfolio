@@ -9,18 +9,17 @@ export default function Navigation() {
 
   return (
     <Navbar 
-      bg="light" 
       expand="lg" 
       fixed="top" 
       expanded={expanded} 
-      className="shadow py-3"
+      className="custom-navbar shadow py-3"
     >
       <Container>
         {/* Logo */}
         <Navbar.Brand 
           as={Link} 
           to="/" 
-          className="fw-bold fs-3 text-primary"
+          className="fw-bold fs-3 brand-link"
         >
           FAZ
         </Navbar.Brand>
@@ -37,10 +36,10 @@ export default function Navigation() {
         {/* Menu Items */}
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="nav-links">
-            <Nav.Link as={Link} to="/" onClick={() => setExpanded(false)}>Home</Nav.Link>
-            <Nav.Link as={Link} to="/about" onClick={() => setExpanded(false)}>About</Nav.Link>
-            <Nav.Link as={Link} to="/projects" onClick={() => setExpanded(false)}>Projects</Nav.Link>
-            <Nav.Link as={Link} to="/contact" onClick={() => setExpanded(false)}>Contact</Nav.Link>
+            <Nav.Link as={Link} to="/" onClick={() => setExpanded(false)} className="nav-link-item">Home</Nav.Link>
+            <Nav.Link as={Link} to="/about" onClick={() => setExpanded(false)} className="nav-link-item">About</Nav.Link>
+            <Nav.Link as={Link} to="/projects" onClick={() => setExpanded(false)} className="nav-link-item">Projects</Nav.Link>
+            <Nav.Link as={Link} to="/contact" onClick={() => setExpanded(false)} className="nav-link-item">Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -1,6 +1,7 @@
 /* src/components/HeroSection.module.css */
 .heroSection {
     position: relative;
+    padding-top: 80px;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -16,7 +17,10 @@
     height: 100%;
     background-color: rgba(0,0,0,0.4);
   }
-  
+  .profileImage {
+    max-width: 300px;
+    border: 5px solid white;
+  }
   .contentContainer {
     position: relative;
     z-index: 1;
@@ -37,6 +41,7 @@
   }
   
   .subText {
+    display: inline-block;
     font-size: 1.25rem;
     margin-bottom: 2rem;
     opacity: 0.9;
@@ -49,12 +54,38 @@
   }
   
   .ctaButton:hover {
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(228, 193, 193, 0.1);
     transform: translateY(-2px);
   }
+  .contactButton {
+    background: linear-gradient(135deg, #a855f7, #9333ea);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  
+  .contactButton:hover {
+    background: linear-gradient(135deg, #9333ea, #7e22ce);
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .contactButton:active {
+    transform: translateY(1px);
+    box-shadow: none;
+  }
+  
   
   .contactWrapper {
-    background: rgba(255,255,255,0.1);
+    padding-top: 2rem;
+    background: rgba(228, 222, 222, 0.923);
     backdrop-filter: blur(10px);
   }
   
@@ -90,6 +121,16 @@
   }
   
   @media (max-width: 992px) {
+    .heroSection {
+      padding-top: 100px; /* More space for mobile */
+      text-align: center;
+    }
+    
+    .profileImage {
+      max-width: 200px;
+      margin-top: 2rem;
+    }
+  }
     .mainHeading {
       font-size: 2.5rem;
     }
@@ -101,7 +142,7 @@
     .contactWrapper {
       margin-top: 2rem !important;
     }
-  }
+  
   
   @media (max-width: 768px) {
     .mainHeading {

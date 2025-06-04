@@ -1,19 +1,34 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navigation from './components/Navbar/Navbar';
-import Home from './Pages/Home';
-import About from './Pages/About';
-import Projects from './Pages/Projects';
-import Contact from './Pages/Contact';
+import './App.css';
+import { lazy, Suspense } from 'react';
+import Navigation from './components/Navbar/Navbar.jsx';
+import Home from './Pages/Home/Home.jsx';
+import About from './Pages/About/About.jsx';
+import Projects from './Pages/Project/Projects.jsx';
+
+
+// Lazy load only the Contact component
+const Contact = lazy(() => import('./Pages/Contact/Contact.jsx'));
 
 function App() {
   return (
     <Router>
-      <Navigation/>
+    
+      <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
+        
+        {/* Lazy-loaded Contact route with Suspense boundary */}
+        <Route 
+          path="/contact" 
+          element={
+            <Suspense fallback={<div className="loading-spinner">Loading Contact Page...</div>}>
+              <Contact />
+            </Suspense>
+          } 
+        />
       </Routes>
     </Router>
   );
