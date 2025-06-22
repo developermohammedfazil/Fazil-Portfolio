@@ -30,7 +30,7 @@ const LearningRoadmap = () => {
       items: ["ChatGPT", "Anton channel", "Dynamic projects"],
       position: "left",
       gradient: "linear-gradient(135deg, #55efc4 0%, #00b894 100%)",
-      github: "vidtube2o.netlify.app/"
+      github: "https://vidtube2o.netlify.app/"
     },
     {
       id: 4,

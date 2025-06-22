@@ -12,6 +12,7 @@ import Project6 from '../../assets/project6.png';
 import Footer from "../../components/Footer";
 
 const Projects = () => {
+  
   const projects = [
     {
       title: "Foodie's - Food delivery website",
@@ -32,14 +33,14 @@ const Projects = () => {
       description: "Developed to got a hands on Experience with api integration",
       image: Project3,
       github: "https://github.com/developermohammedfazil/Vid-Tube",
-      live: "vidtube2o.netlify.app/"
+      live: "https://vidtube2o.netlify.app/"
     },
     {
-      title: "Weather WebApp",
-      description: "using this basis level weather app to track the weather- this project simply learning purpose",
+      title: "Sentiment-Analyzer",
+      description: "Sentiment Analysis: Real-time response from a Node.js Express backend using sentiment logic.",
       image: Project4,
-      github: "https://github.com/developermohammedfazil/Weather-WebApp",
-      live: "#"
+      github: "https://github.com/developermohammedfazil/Sentiment-Analyzer-o.1",
+      live: "https://sentiment-analyzer-o-2.vercel.app/"
     },
       {
       title: "Shoe's shopping site",
@@ -118,6 +119,7 @@ const ProjectCard = ({ project }) => (
       </Card.Text>
     </Card.Body>
   </Card>
+  
 );
 
 export default Projects;
