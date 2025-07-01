@@ -9,13 +9,13 @@ import LearningRoadmap from "./LearningRoadmap";
 const About = () => {
   const handleDownloadResume = () => {
     const link = document.createElement("a");
-    link.href = "/resume.pdf";
+    link.href = "/Mohammed Fazil-S.pdf";
     link.download = "MohammedFazil_Resume.pdf";
     link.click();
   };
    const handleViewOnline = () => {
     // Open PDF in new tab
-    window.open('/resume.pdf', '_blank');
+    window.open('/Mohammed Fazil-S.pdf', '_blank');
   };
   return (
     <>

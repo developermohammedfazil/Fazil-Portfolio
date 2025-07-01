@@ -1,8 +1,9 @@
-import React from 'react';
+
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
+import React, { useRef, useEffect, useState } from 'react';
+
 import './Projects.css';
-import projectVideo from '../../assets/bg.mp4';
 import Project1 from '../../assets/project1.png';
 import Project2 from '../../assets/project2.png';
 import Project3 from '../../assets/project3.png';
@@ -12,6 +13,23 @@ import Project6 from '../../assets/project6.png';
 import Footer from "../../components/Footer";
 
 const Projects = () => {
+   const videoRef = useRef();
+  const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setShowVideo(true);
+        observer.disconnect();
+      }
+    });
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   
   const projects = [
     {
@@ -63,11 +81,17 @@ const Projects = () => {
 
   return (
     <>
-    <div className="project-page">
-      <video autoPlay loop muted className="video-background">
-        <source src={projectVideo} type="video/mp4" />
-      </video>
-      
+   <div className="project-page" ref={videoRef}>
+  {showVideo && (
+    <video autoPlay loop muted playsInline className="video-background">
+      <source
+        src="https://res.cloudinary.com/dlxvsorgs/video/upload/v1751344387/bg_ptdtm1.mp4"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
+  )}
+   
       <div className="content-overlay">
         <Container>
           <h1 className="text-center mb-5 page-title">My Projects</h1>
