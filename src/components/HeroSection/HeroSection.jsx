@@ -43,7 +43,7 @@ const HeroSection = () => {
                   variant="outline-light" 
                   size="lg"
                   className={`${styles.ctaButton} mb-4`}
-                  href="#projects"
+                   onClick={() => navigate('/projects')}
                 >
                   View Work
                 </Button>

@@ -44,7 +44,7 @@ const Projects = () => {
       description: "Developed a responsive portfolio - Using technologies are React vite and bootstrap",
       image: Project2,
       github: "#",
-      live: "#"
+      live: "https://portfoliomohammedfazil.netlify.app/"
     },
     {
       title: "Vid-Tube - youtube clone",
